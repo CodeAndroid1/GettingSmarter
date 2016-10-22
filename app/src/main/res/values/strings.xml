@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Getting Smarter</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_update">UpdateActivity</string>
+    <string name="title_activity_timeline">TimelineActivity</string>
+    <string name="title_activity_statistics">StatisticsActivity</string>
 </resources>

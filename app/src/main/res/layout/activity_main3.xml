@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.gettingsmarter.gettingsmarter.Main3Activity"
-    android:background="#B6B6B6"
-    android:orientation="vertical"
-    >
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Literacy"
+            android:text="Literacy         :"
             android:textSize="30sp"
             android:textColor="@color/colorAccent"/>
         <TextView
@@ -37,7 +38,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Health"
+            android:text="Health           :"
             android:textSize="30sp"
             android:textColor="@color/colorAccent"/>
         <TextView
@@ -57,7 +58,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Technology"
+            android:text="Technology  :"
             android:textSize="30sp"
             android:textColor="@color/colorAccent"/>
         <TextView

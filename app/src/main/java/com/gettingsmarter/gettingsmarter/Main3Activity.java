@@ -2,7 +2,10 @@ package com.gettingsmarter.gettingsmarter;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.content.*;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -23,6 +26,10 @@ public class Main3Activity extends AppCompatActivity  implements OnMapReadyCallb
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -53,5 +60,49 @@ public class Main3Activity extends AppCompatActivity  implements OnMapReadyCallb
         LatLng sydney = new LatLng(lati, longi);
         mMap.addMarker(new MarkerOptions().position(sydney).title(place));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+    }
+
+   /* public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //Write your logic here
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }*/
+
+     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+   @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.update) {
+            Intent i = new Intent(this, UpdateActivity.class);
+            startActivity(i);
+        }
+        else if (id == R.id.timeline) {
+            Intent i = new Intent(this, TimelineActivity.class);
+            startActivity(i);
+        }
+        else if (id == R.id.statistics) {
+            Intent i = new Intent(this, StatisticsActivity.class);
+            startActivity(i);
+        }
+        else if(id== R.id.home){
+            this.finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
